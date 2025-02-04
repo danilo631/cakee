@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-color: #ffc4c4;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    /*alinhar na vertical */
+    justify-content: space-between;
+    /*alinha horizontal*/
+    padding-left: 80px;
+    /* Define um espaçamento interno de 80 pixels à esquerda do conteúdo */
+    padding-right: 80px;
+    /* Define um espaçamento interno de 80 pixels à direita do conteúdo */
+    padding-top: 24px;
+    /* Define um espaçamento interno de 24 pixels na parte superior do conteúdo */
+    padding-bottom: 24px;
+    /* Define um espaçamento interno de 24 pixels na parte inferior do conteúdo */
+}
+.imagem-pequena {
+    width: 100px;
+    height: auto;
+  }

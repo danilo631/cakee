@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff9ed;
+}
+header {
+    background-color: #ffc4c4;
+    font-size: 30px; /* Diminui o tamanho da fonte */
+    display: flex;
+    align-items: center; /* Alinha na vertical */
+    justify-content: space-between; /* Alinha na horizontal */
+    padding-left: 40px; /* Diminui o padding nas laterais */
+    padding-right: 40px; /* Diminui o padding nas laterais */
+    padding-top: 10px; /* Diminui o padding superior */
+    padding-bottom: 5px; /* Ajuste do padding inferior */
+    height: 100px; /* Define uma altura fixa para o cabeçalho */
+}
+
+
+.imagem-pequena {
+    width: 80px; /* Diminui o tamanho das imagens */
+    height: auto;
+}
+
+
+  .sem-sublinhado {
+    text-decoration: none !important;
+    color: rgb(75, 11, 11);
+}
+
+
+  nav {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+nav a {
+    color: #000;
+    font-weight: bold;
+    margin-right: 15px; /* Espaçamento entre os links */
+}
+
+#title {
+    text-align: center;
+    padding: 20px;
+}
+
+#festas {
+    text-align: center;
+    padding: 20px;
+
+}
+
+.toldo img {
+    width: 100%;
+
+}
+div.Primeira.logo {
+    position: absolute; /* Logo posicionada de forma absoluta */
+    top: 15%; /* Centraliza a logo verticalmente */
+    left: 13%; /* Centraliza a logo horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para ficar perfeitamente centralizada */
+    z-index: 10; /* Coloca a logo na frente de outros elementos */
+    
+}
+
+.Segunda {
+    transform: translate(125%, 50%); 
+}

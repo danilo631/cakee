@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./imagens/MAC CAKE LOGO.png">   
+    <link rel="icon" type="image/x-icon" href="./imagens/MAC CAKE LOGO.png">
     <link rel="stylesheet" href="contato.css">
     <title>Mac Cake</title>
 </head>
+
 <body>
     <header>
-        <div class="Primeira logo" href="./quemsomos.html">
+        <div class="Primeira logo">
             <a href="index.html">
-                <img src="./imagens/MAC CAKE LOGO.png" alt="Mac Cake">
-        </div>
-        <div class="Segunda"  href="./quemsomos.html">
-            <a href="quemsomos.html">
-                <img src="./imagens/Mac Cake_2_base.png" alt="Segunda Logo">
+            <img src="./imagens/MAC CAKE LOGO.png" alt="Primeira Logo">
             </a>
         </div>
-        <nav class="abas">
+        <div class="base mac_cake">
+        <a href="quemsomos.html">
+            <img src="./imagens/Mac Cake_2_base.png" alt="Segunda Logo">
+        </a>
+    </div>
+        <nav>
             <a href="./contato.html" class="sem-sublinhado">Contato</a>
             <a href="./servicos.html" class="sem-sublinhado">Serviços</a>
             <a href="./produtos.html" class="sem-sublinhado">Produtos</a>
@@ -28,10 +30,41 @@
         </nav>
     </header>
     <div class="toldo">
-        <img src="imagens/toldo_base site div.png" alt="toldo do site">
-       
+        <img src="./imagens/toldo_base site div.png" alt="toldo do site">
+        
     </div>
+    <main>
+        <section class="formulario">
+            <h2>Envie sua mensagem</h2>
+            <form action="./envio_formulario.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
     
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+    
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui" required></textarea>
+    
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <!-- Aplicando em formspree projeto futuro para respostas precisa a cliente. -->
+    <div class="info-container">
+        <h1>Informações de Contato</h1>
+        <p><strong>Telefone:</strong> <span>(11) 1234-5678</span></p>
+        <p><strong>E-mail:</strong> <span>exemplo@dominio.com</span></p>
+        <p><strong>Endereço:</strong> <span>Rua Exemplo, 123, Bairro, Cidade, Estado</span></p>
+        <h2>Localização</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d480130.24441646924!2d-48.70820179828926!3d-19.923665912939644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bad036dc90da0b%3A0x7d51e2721bc7f52e!2sCentro%20de%20Forma%C3%A7%C3%A3o%20Profissional%20Fidelis%20Reis%20-%20SENAI%20Uberaba!5e0!3m2!1spt-BR!2sbr!4v1738697489614!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+           
+        </iframe>
+    </div>
+
+    <script href="./js/script.js"></script>
+
 </body>
 
 </html>

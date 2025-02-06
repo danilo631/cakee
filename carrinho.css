@@ -59,7 +59,7 @@ nav a {
     width: 100%; /* A imagem agora ocupa 100% da largura disponível */
     height: auto;
 }
-.teste {
+.relogio {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     margin: 0 auto;          /* Centraliza a div horizontalmente no layout */

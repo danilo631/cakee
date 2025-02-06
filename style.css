@@ -1,73 +1,143 @@
+/* Resetando margens e padding do html e body */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     background-color: #fff9ed;
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
+
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho */
 header {
     background-color: #ffc4c4;
-    font-size: 30px; /* Diminui o tamanho da fonte */
+    font-size: 40px;
     display: flex;
-    align-items: center; /* Alinha na vertical */
-    justify-content: space-between; /* Alinha na horizontal */
-    padding-left: 40px; /* Diminui o padding nas laterais */
-    padding-right: 40px; /* Diminui o padding nas laterais */
-    padding-top: 10px; /* Diminui o padding superior */
-    padding-bottom: 5px; /* Ajuste do padding inferior */
-    height: 100px; /* Define uma altura fixa para o cabeçalho */
+    align-items: center;
+    justify-content: space-between; /* Correção do 'espaço-entre' */
+    padding-left: 10px; /* Ajuste para não ter muito padding nas laterais */
+    padding-right: 10px; /* Ajuste para não ter muito padding nas laterais */
+    top: 0;
+    padding-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
 }
 
-
+/* Estilo para as imagens pequenas */
 .imagem-pequena {
-    width: 80px; /* Diminui o tamanho das imagens */
+    width: 100px;
     height: auto;
 }
 
-
-  .sem-sublinhado {
+/* Estilo do link sem sublinhado */
+.sem-sublinhado {
     text-decoration: none !important;
     color: rgb(75, 11, 11);
 }
 
-
-  nav {
+/* Navegação */
+nav {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
+    align-items: center;
 }
 
 nav a {
     color: #000;
     font-weight: bold;
-    margin-right: 15px; /* Espaçamento entre os links */
+    margin-right: 15px;
 }
 
-#title {
-    text-align: center;
-    padding: 20px;
-}
-
-#festas {
-    text-align: center;
-    padding: 20px;
-
+/* Ajustando o "toldo" para ocupar 100% da largura da tela */
+.toldo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .toldo img {
     width: 100%;
-
+    height: auto;
 }
+
+/* Ajustando o posicionamento das logos */
 div.Primeira.logo {
-    position: absolute; /* Logo posicionada de forma absoluta */
-    top: 15%; /* Centraliza a logo verticalmente */
-    left: 13%; /* Centraliza a logo horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta a posição para ficar perfeitamente centralizada */
-    z-index: 10; /* Coloca a logo na frente de outros elementos */
-    
+    position: fixed; /* Fixa o elemento na tela */
+    top: 16%; /* Mantém o topo da logo a 20% da altura da tela */
+    left: 13%; /* Mantém a logo a 13% da largura da tela */
+    transform: translate(-50%, -50%); /* Centraliza a logo em relação à posição definida */
+    z-index: 10; /* Garante que a logo fique acima de outros elementos */
 }
 
-div.Segunda {
-    top: 180%; /* Centraliza verticalmente */
-    right: 100%; /* Alinha horizontalmente */
-    transform: translate(125%, 50%); /* Ajuste fino para centralização */
-    z-index: 0; /* Garante que a logo fique sobre os elementos */
+div.base.mac_cake {
+    top: 15%;
+    left: 13%;
+    transform: translate(130%, 70%);
+    z-index: 10;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #56091f;
+}
+
+
+.carousel-container {
+    background-color: #ffd9dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px; /* Adiciona espaçamento entre imagens */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel a img {
+    width: 200px; /* Ajuste conforme necessário */
+    height: auto;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Efeito de sombra suave */
+    transition: transform 0.3s ease-in-out;
+    top: -50px;
+}
+
+/* Efeito ao passar o mouse */
+.carousel a img:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
+}
+
+/* Estilizar botões de navegação */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* Posicionamento das setas */
+.prev { 
+    left: 0;
+ }
+.next { 
+    right: 0;
+ }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }

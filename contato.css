@@ -1,61 +1,235 @@
+/* Resetando margens e padding do html e body */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     background-color: #fff9ed;
-}
-header {
-    background-color: #ffc4c4;
-    font-size: 30px; /* Diminui o tamanho da fonte */
-    display: flex;
-    align-items: center; /* Alinha na vertical */
-    justify-content: space-between; /* Alinha na horizontal */
-    padding-left: 40px; /* Diminui o padding nas laterais */
-    padding-right: 40px; /* Diminui o padding nas laterais */
-    padding-top: 10px; /* Diminui o padding superior */
-    padding-bottom: 5px; /* Ajuste do padding inferior */
-    height: 100px; /* Define uma altura fixa para o cabeçalho */
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #ffc4c4;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Correção do 'espaço-entre' */
+    padding-left: 10px; /* Ajuste para não ter muito padding nas laterais */
+    padding-right: 10px; /* Ajuste para não ter muito padding nas laterais */
+    top: 0;
+    padding-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
+}
+
+/* Estilo para as imagens pequenas */
 .imagem-pequena {
-    width: 80px; /* Diminui o tamanho das imagens */
+    width: 100px;
     height: auto;
 }
 
-
-  .sem-sublinhado {
+/* Estilo do link sem sublinhado */
+.sem-sublinhado {
     text-decoration: none !important;
     color: rgb(75, 11, 11);
 }
 
-
-  nav {
+/* Navegação */
+nav {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
+    align-items: center;
 }
 
 nav a {
     color: #000;
     font-weight: bold;
-    margin-right: 15px; /* Espaçamento entre os links */
+    margin-right: 15px;
+}
+
+/* Ajustando o "toldo" para ocupar 100% da largura da tela */
+.toldo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .toldo img {
     width: 100%;
-
+    height: auto;
 }
+
+/* Ajustando o posicionamento das logos */
 div.Primeira.logo {
-    position: absolute; /* Logo posicionada de forma absoluta */
-    top: 15%; /* Centraliza a logo verticalmente */
-    left: 13%; /* Centraliza a logo horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta a posição para ficar perfeitamente centralizada */
-    z-index: 10; /* Coloca a logo na frente de outros elementos */
-    
+    position: fixed;/* Fixa o elemento na tela */
+    top: 16%; /* Mantém o topo da logo a 20% da altura da tela */
+    left: 13%; /* Mantém a logo a 13% da largura da tela */
+    transform: translate(-50%, -50%); /* Centraliza a logo em relação à posição definida */
+    z-index: 10; /* Garante que a logo fique acima de outros elementos */
 }
 
-div.Segunda {
-    top: 180%; /* Centraliza verticalmente */
-    right: 100%; /* Alinha horizontalmente */
-    transform: translate(125%, 50%); /* Ajuste fino para centralização */
-    z-index: 0; /* Garante que a logo fique sobre os elementos */
+div.base.mac_cake {
+    top: 15%;
+    left: 13%;
+    transform: translate(130%, 70%);
+    z-index: 10;
+}
+
+/* Estilo do formulário */
+form {
+    padding: 20px;
+    width: 100%; /* Ajusta o formulário para 100% da largura */
+    max-width: 500px; /* Limita o tamanho máximo do formulário */
+    position: fixed;
+    top: 30%;
+    right: 0;
+    left: 0;
+    margin: 0 auto; /* Centraliza o formulário */
+    z-index: 100;
+    color: rgb(75, 11, 11);
+    background-color: transparent; /* Removendo fundo */
+    border: none; /* Removendo borda */
+    box-shadow: none; /* Removendo sombra */
+    transform: translate(90%, 10%);
+}
+
+/* Estilos dos rótulos e campos do formulário */
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 25px; /* Borda arredondada */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Borda suave */
+    background-color: #fff; /* Fundo branco nos campos */
+}
+
+form button {
+    background-color: #ffc4c4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff8c8c;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    color: rgb(75, 11, 11);
+}
+
+/* Estilos dos campos específicos */
+input#nome {
+    background-color: #faefd6;
+    color: rgb(75, 11, 11);
+}
+
+input#email {
+    background-color: #faefd6;
+    color: rgb(75, 11, 11);
+}
+
+textarea#mensagem {
+    background-color: #faefd6;
+    color: rgb(75, 11, 11);
+}
+
+/* Ajustando a posição do h2 */
+h2 {
+    transform: translate(35%, 45%);
+}
+
+/* Responsividade para telas menores (até 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .Primeira.logo,
+    .base.mac_cake {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    nav a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 80%;
+        top: 50%;
+        right: 10px;
+    }
+}
+
+/* Responsividade para dispositivos móveis (até 480px) */
+@media (max-width: 480px) {
+    .imagem-pequena {
+        width: 70px;
+    }
+
+    header {
+        font-size: 24px;
+    }
+
+    form {
+        width: 90%;
+        top: 50%;
+        right: 5px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+}
+div.info-container {
+    text-align: center;
+    transform: translate(3%, 3%);
+    width: 40%;
+    color: rgb(75, 11, 11);
+    font-size: larger;
+}
+
+h1, p {
+    text-decoration: none; /* Remover o sublinhado do título e parágrafos */
+    background-color: #faefd6;
+    border-radius: 60px;
+}
+
+strong, span {
+    font-weight: bold;
 }

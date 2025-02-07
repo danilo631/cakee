@@ -1,71 +1,251 @@
+/* Resetando margens e padding do html e body */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff9ed;
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
+
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* conserto para o cabeçalho ficar fixado e acima das outras informações, pois teve muitos erros nessa parte, deixando site bastante bugado. by danilo*/
+header {
+    position: fixed;
+    z-index: 10;
+}
+
+/* Estilo do cabeçalho */
 header {
     background-color: #ffc4c4;
     font-size: 40px;
     display: flex;
     align-items: center;
-    /*alinhar na vertical */
-    justify-content: space-between;
-    /*alinha horizontal*/
-    padding-left: 80px;
-    /* Define um espaçamento interno de 80 pixels à esquerda do conteúdo */
-    padding-right: 80px;
-    /* Define um espaçamento interno de 80 pixels à direita do conteúdo */
-    padding-top: 24px;
-    /* Define um espaçamento interno de 24 pixels na parte superior do conteúdo */
-    padding-bottom: 24px;
-    /* Define um espaçamento interno de 24 pixels na parte inferior do conteúdo */
+    justify-content: space-between; /* Correção do 'espaço-entre' */
+    padding-left: 10px; /* Ajuste para não ter muito padding nas laterais */
+    padding-right: 10px; /* Ajuste para não ter muito padding nas laterais */
+    top: 0;
+    padding-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
 }
+/* Estilo para as imagens pequenas */
 .imagem-pequena {
-    width: 50px;
+    width: 100px;
     height: auto;
-  }
-#primeira_parte, #segunda_parte, #terceira_parte, #quarta_parte{
-    color: #ffc4c4;
-    text-align: center;
 }
-#primeira_parte{
-    font-size: 60px;
-}
+
+/* Estilo do link sem sublinhado */
 .sem-sublinhado {
     text-decoration: none !important;
     color: rgb(75, 11, 11);
 }
 
+/* Navegação */
 nav {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
+    align-items: center;
 }
 
 nav a {
     color: #000;
     font-weight: bold;
-    margin-right: 15px; /* Espaçamento entre os links */
+    margin-right: 15px;
 }
 
-/* Ajustando a div .toldo para ocupar toda a largura da tela */
+/* Ajustando o "toldo" para ocupar 100% da largura da tela */
 .toldo {
     display: flex;
-    justify-content: space-between; /* Alinha as imagens na horizontal */
-    width: 100%; /* Faz com que a div ocupe 100% da largura da tela */
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
 }
 
 .toldo img {
-    width: 100%; /* A imagem agora ocupa 100% da largura disponível */
+    width: 100%;
     height: auto;
-}
-.relogio {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    margin: 0 auto;          /* Centraliza a div horizontalmente no layout */
-    width: 100%;             /* Define a largura da div como 100% do contêiner pai */
+    transform: translate( 0%, 296%) ;
 }
 
-.teste img {
-    max-width: 100%;         /* Garante que a imagem não ultrapasse a largura da div */
+/* Ajustando o posicionamento das logos */
+div.Primeira.logo {
+    position: absolute;/* Fixa o elemento na tela */
+    top: 16%; /* Mantém o topo da logo a 20% da altura da tela */
+    left: 13%; /* Mantém a logo a 13% da largura da tela */
+    transform: translate(-50%, -5%); /* Centraliza a logo em relação à posição definida */
+    z-index: 10; /* Garante que a logo fique acima de outros elementos */
+}
+
+div.base.mac_cake {
+    top: 15%;
+    left: 13%;
+    transform: translate(130%, 70%);
+    z-index: 10;
+}
+.relogio {
+
+    z-index: 11;
+    transform: translate(30%, 90%);
+}
+
+.div.relogio1 {
+    border-radius: 50%;
+}
+
+/* Estilo do formulário */
+form {
+    padding: 20px;
+    width: 100%; /* Ajusta o formulário para 100% da largura */
+    max-width: 500px; /* Limita o tamanho máximo do formulário */
+    top: 30%;
+    right: 0;
+    left: 0;
+    margin: 0 auto; /* Centraliza o formulário */
+    z-index: 100;
+    color: rgb(75, 11, 11);
+    background-color: transparent; /* Removendo fundo */
+    border: none; /* Removendo borda */
+    box-shadow: none; /* Removendo sombra */
+    transform: translate(90%, 30%);
+}
+
+/* Estilos dos rótulos e campos do formulário */
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 25px; /* Borda arredondada */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Borda suave */
+    background-color: #fff; /* Fundo branco nos campos */
+}
+
+form button {
+    background-color: #ffc4c4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff8c8c;
+}
+
+h2 {
+    text-align: left;
+    padding-left: 4%;
+}
+
+main {
+    color: rgb(75, 11, 11);
+}
+
+/* Estilos dos campos específicos */
+input#nome {
+    background-color: #faefd6;
+    color: rgb(75, 11, 11);
+}
+
+input#email {
+    background-color: #faefd6;
+    color: rgb(75, 11, 11);
+}
+
+textarea#mensagem {
+    background-color: #faefd6;
+    color: rgb(75, 11, 11);
+}
+
+/* Ajustando a posição do h2 */
+h2 {
+    transform: translate(35%, 45%);
+}
+
+/* Responsividade para telas menores (até 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .Primeira.logo,
+    .base.mac_cake {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    nav a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 80%;
+        top: 50%;
+        right: 10px;
+    }
+}
+
+/* Responsividade para dispositivos móveis (até 480px) */
+@media (max-width: 480px) {
+    .imagem-pequena {
+        width: 70px;
+    }
+
+    header {
+        font-size: 24px;
+    }
+
+   
+}
+div.info-container {
+    text-align: center;
+    transform: translate(3%, -40%);
+    width: 40%;
+    color: rgb(75, 11, 11);
+    font-size: larger;
+}
+
+h1, p {
+    text-decoration: none; /* Remover o sublinhado do título e parágrafos */
+    background-color: #faefd6;
+    border-radius: 60px;
+}
+
+strong, span {
+    font-weight: bold;
+}
+.footer {
+    background-color: #ffc4c4;
+    color: rgb(75, 11, 11);
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+div.copyright  p {
+    background-color: #ffc4c4;
 }

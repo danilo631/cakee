@@ -6,6 +6,7 @@ body {
     height: 100%;
     background-color: #fff9ed;
     overflow-x: hidden; /* Evita rolagem horizontal */
+   text-align: center;
 }
 
 /* Estilo geral do body */
@@ -66,7 +67,7 @@ nav a {
 
 /* Ajustando o posicionamento das logos */
 div.Primeira.logo {
-    position: fixed; /* Fixa o elemento na tela */
+    position: absolute;
     top: 16%; /* Mantém o topo da logo a 20% da altura da tela */
     left: 13%; /* Mantém a logo a 13% da largura da tela */
     transform: translate(-50%, -50%); /* Centraliza a logo em relação à posição definida */
@@ -75,7 +76,32 @@ div.Primeira.logo {
 
 div.base.mac_cake {
     top: 15%;
-    left: 13%;
-    transform: translate(130%, 70%);
+    left: 10%;
+    transform: translate(-100%, 70%);
     z-index: 10;
+}
+/* Centralizando o texto dentro do parágrafo */
+
+
+/* Ajuste no h1 */
+h1 {
+    text-align: center; /* Garante que o texto do h1 fique centralizado */
+    font-size: 24px; /* Ajuste no tamanho da fonte do h1 */
+    margin-bottom: 20px; /* Espaçamento abaixo do h1 */
+    color: rgb(75, 11, 11);
+}
+/* Estilos básicos */
+
+/* Estilo do rodapé */
+.footer {
+    background-color: #ffc4c4;
+    color: rgb(75, 11, 11);
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+div.copyright  p {
+    background-color: #ffc4c4;
 }

@@ -66,7 +66,7 @@ nav a {
 
 /* Ajustando o posicionamento das logos */
 div.Primeira.logo {
-    position: fixed; /* Fixa o elemento na tela */
+    position: absolute;
     top: 16%; /* Mantém o topo da logo a 20% da altura da tela */
     left: 13%; /* Mantém a logo a 13% da largura da tela */
     transform: translate(-50%, -50%); /* Centraliza a logo em relação à posição definida */
@@ -76,7 +76,7 @@ div.Primeira.logo {
 div.base.mac_cake {
     top: 15%;
     left: 13%;
-    transform: translate(130%, 70%);
+    transform: translate(-100%, 70%);
     z-index: 10;
 }
 
@@ -92,13 +92,14 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
+ 
 }
-
 .carousel {
     display: flex;
     gap: 20px; /* Adiciona espaçamento entre imagens */
     transition: transform 0.5s ease-in-out;
+    
 }
 
 .carousel a img {
@@ -140,4 +141,35 @@ h1 {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+button.next {
+
+   transform: translate(1%, -230%);
+}
+button.prev {
+
+    transform: translate(1%, -230%);
+}
+.footer {
+    background-color: #ffc4c4;
+    color: rgb(75, 11, 11);
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilos do texto de direitos autorais */
+div.copyright p {
+    margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
+    background-color: #ffc4c4;
+}
+
+div.copyright p:first-child {
+    font-weight: bold;
+    text-align: center;
 }

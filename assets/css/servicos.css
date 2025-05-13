@@ -1,0 +1,70 @@
+/* CSS para a página de serviços */
+.toldo {
+    width: 100%;
+    text-align: center;
+    background-color: #f0e5ff;
+    padding: 10px 0;
+}
+
+.toldo img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    padding: 20px;
+    background-color: #fff7ff;
+    min-height: 80vh;
+}
+
+#title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #7a35b8;
+}
+
+/* Grade de serviços */
+.servicos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Cada item de serviço */
+.servico-item {
+    display: block;
+    width: 280px;
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.servico-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Título do serviço */
+.servico-titulo {
+    font-size: 1.4em;
+    color: #a457ff;
+    margin-top: 15px;
+}
+
+/* Imagem */
+.servico-imagem {
+    padding: 15px;
+}
+
+.servico-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

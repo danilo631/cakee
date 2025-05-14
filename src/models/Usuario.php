@@ -17,52 +17,54 @@ class Usuario {
      * @param array $dados ['nome', 'email', 'senha', 'tipo']
      * @return array ['success', 'message', 'id']
      */
-    public function cadastrar($dados) {
-        // Validação dos dados
-        if (empty($dados['nome'])) {
-            return array('success' => false, 'message' => 'Nome é obrigatório');
-        }
-
-        if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
-            return array('success' => false, 'message' => 'Email inválido');
-        }
-
-        if (strlen($dados['senha']) < 6) {
-            return array('success' => false, 'message' => 'Senha deve ter pelo menos 6 caracteres');
-        }
-
-        $dados['tipo'] = isset($dados['tipo']) ? $dados['tipo'] : 'cliente';
-
-        try {
-            // Verifica se email já existe
-            $stmt = $this->db->prepare("SELECT id FROM usuarios WHERE email = ?");
-            $stmt->bind_param("s", $dados['email']);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            
-            if ($result->num_rows > 0) {
-                return array('success' => false, 'message' => 'Email já cadastrado');
-            }
-
-            // Hash da senha
-            $senhaHash = password_hash($dados['senha'], PASSWORD_DEFAULT);
-
-            // Insere no banco
-            $stmt = $this->db->prepare("INSERT INTO usuarios (nome, email, senha, tipo) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("ssss", $dados['nome'], $dados['email'], $senhaHash, $dados['tipo']);
-            $stmt->execute();
-
-            return array(
-                'success' => true,
-                'message' => 'Usuário cadastrado com sucesso',
-                'id' => $stmt->insert_id
-            );
-
-        } catch (Exception $e) {
-            error_log("Erro ao cadastrar usuário: " . $e->getMessage());
-            return array('success' => false, 'message' => 'Erro ao cadastrar usuário');
-        }
+ public function cadastrar($dados) {
+    // Validação dos dados
+    if (empty($dados['nome'])) {
+        return array('success' => false, 'message' => 'Nome é obrigatório');
     }
+
+    if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+        return array('success' => false, 'message' => 'Email inválido');
+    }
+
+    if (strlen($dados['senha']) < 6) {
+        return array('success' => false, 'message' => 'Senha deve ter pelo menos 6 caracteres');
+    }
+
+    $dados['tipo'] = $dados['tipo'] ?? 'cliente';
+
+    try {
+        // Verifica se email já existe
+        $stmt = $this->db->prepare("SELECT id FROM usuarios WHERE email = :email");
+        $stmt->bindValue(':email', $dados['email']);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return array('success' => false, 'message' => 'Email já cadastrado');
+        }
+
+        // Hash da senha
+        $senhaHash = password_hash($dados['senha'], PASSWORD_DEFAULT);
+
+        // Insere no banco
+        $stmt = $this->db->prepare("INSERT INTO usuarios (nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)");
+        $stmt->bindValue(':nome', $dados['nome']);
+        $stmt->bindValue(':email', $dados['email']);
+        $stmt->bindValue(':senha', $senhaHash);
+        $stmt->bindValue(':tipo', $dados['tipo']);
+        $stmt->execute();
+
+        return array(
+            'success' => true,
+            'message' => 'Usuário cadastrado com sucesso',
+            'id' => $this->db->lastInsertId()
+        );
+
+    } catch (Exception $e) {
+        error_log("Erro ao cadastrar usuário: " . $e->getMessage());
+        return array('success' => false, 'message' => 'Erro ao cadastrar usuário');
+    }
+}
 
     /**
      * Autentica um usuário

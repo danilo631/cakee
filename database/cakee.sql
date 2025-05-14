@@ -1,3 +1,4 @@
+-- SQLBook: Code
 -- Criação do banco de dados
 CREATE DATABASE IF NOT EXISTS cakee_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE cakee_db;
@@ -7,7 +8,7 @@ CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    senha_hash VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

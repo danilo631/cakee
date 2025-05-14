@@ -5,7 +5,7 @@
     <img src="./imagens/toldo_base site div.png" alt="Toldo decorativo do site">
 </div>
 
-
+<head>  <link rel="stylesheet" href="/assets/css/style.css"> </head>
 
 <!-- Conteúdo Principal -->
 <main>
@@ -39,4 +39,4 @@
     </section>
 </main>
 
-<?php include('../src/views/templates/header.php'); ?>
+<?php include('../src/views/templates/footer.php'); ?>

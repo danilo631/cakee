@@ -23,6 +23,9 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ===== HEADER ===== */
@@ -245,9 +248,21 @@ nav ul li a:hover {
 /* ===== TOLDO ===== */
 .toldo {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 100; /* Ajuste o valor conforme necessário */
+    padding: 0;
     position: relative;
+}
+
+.toldo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     z-index: 5;
+
 }
 
 .toldo img {
@@ -258,28 +273,47 @@ nav ul li a:hover {
 
 /* ===== FOOTER ===== */
 .footer {
-    background-color: var(--dark-color);
-    color: white;
+    background-color: #ffc4c4;
+    color: rgb(75, 11, 11);
     text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 4rem;
+    padding: 20px;
+    margin-top: auto;
 }
 
-.footer .social-links {
+/* Estilos do texto de direitos autorais */
+.copyright p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+copyright p:first-child {
+    font-weight: bold;
+}
+
+/* ===== CARRINHO DE COMPRAS ===== */
+.carrinho-container {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    margin-left: 1rem;
 }
 
-.footer .social-links a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+.carrinho-container a {
+    display: inline-block;
+    padding: 0.2rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.footer .social-links a:hover {
-    color: var(--secondary-color);
+.carrinho-container a:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.imagem-pequena {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
 }
 
 /* ===== RESPONSIVIDADE ===== */

@@ -15,12 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<?php include('header.php'); ?>
+<?php include('../src/views/templates/header.php'); ?>
 
 <!-- Toldo -->
 <div class="toldo">
     <img src="./imagens/toldo_base site div.png" alt="Toldo decorativo do site">
 </div>
+
+ <link rel="stylesheet" href="/assets/css/style.css">
 
 <!-- Conteúdo Principal -->
 <main>
@@ -59,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </main>
 
-<?php include('footer.php'); ?>
+<?php include '../src/views/templates/footer.php'; ?>
 
 <!-- Scripts -->
 <script src="js/contato.js"></script>

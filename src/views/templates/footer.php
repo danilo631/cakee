@@ -1,15 +1,13 @@
    <!-- Rodapé -->
-    <footer class="footer">
+     <footer class="footer">
         <div class="copyright">
             <a href="https://www.facebook.com/profile.php?id=61573112745752" target="_blank">
-                <img src="assets/images/icons8-facebook-logo-80.png">
-            </a>
+            <img src="imagens/icons8-facebook-logo-80.png"></a>
             <a href="https://github.com/maccake2025" target="_blank">
-                <img src="assets/images/icons8-github-80x80.png">
-            </a>
+            <img src="imagens/icons8-github-80x80.png"></a>
             <a href="https://www.instagram.com/macc.ake/" target="_blank">
-                <img src="assets/images/icons8-instagram-logo-80.png">
-            </a>
+            <img src="imagens/icons8-instagram-logo-80.png"></a>
+            
             <p>&copy; 2025 Mac Cake. Todos os direitos reservados.</p>
         </div>
     </footer>

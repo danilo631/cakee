@@ -1,6 +1,6 @@
 <?php
-require_once('src/config/database.php');
-require_once('src/models/Produto.php');
+require_once('../src/config/database.php');
+require_once('../src/models/Produto.php');
 
 class Carrinho {
     public static function adicionarItem($usuarioId, $produtoId, $quantidade = 1) {

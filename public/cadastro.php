@@ -1,19 +1,24 @@
 <?php
 session_start();
+
 require_once '../src/config/database.php';
 require_once '../src/models/Usuario.php';
+
+use App\Models\Usuario;
 
 $mensagem = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $tipo = $_POST['tipo'] ?? 'cliente';
-    
-    $usuario = new Usuario($nome, $email, $senha, $tipo);
-    $resultado = Usuario::cadastrar($usuario);
-    
+    $dados = [
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'senha' => $_POST['senha'],
+        'tipo' => $_POST['tipo'] ?? 'cliente'
+    ];
+
+    $usuario = new Usuario(); // Instancia sem parâmetros
+    $resultado = $usuario->cadastrar($dados); // Chama método de instância com array
+
     if ($resultado['success']) {
         $_SESSION['mensagem'] = 'Cadastro realizado com sucesso! Faça login para continuar.';
         header('Location: login.php');
@@ -23,8 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include '../src/views/templates/header.php';
+include '../src/views/templates/header.php'; 
 ?>
+
+
+<link rel="stylesheet" href="/assets/css/style.css">
 
 <main class="container auth-page">
     <div class="auth-form">

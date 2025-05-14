@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/auth.css/header.css" />
     <title>Mac Cake - Início</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="menu-icon" onclick="toggleMenu()" aria-label="Abrir menu">&#9776;</div>
 
         <div class="logo-container">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="/assets/images/MAC CAKE LOGO.png" alt="Logo da Mac Cake" class="primeira-logo">
             </a>
             <a href="quemsomos.php">

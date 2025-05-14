@@ -3,6 +3,8 @@ session_start();
 require_once '../src/config/database.php';
 require_once '../src/models/Usuario.php';
 
+use App\Models\Usuario;
+
 $mensagem = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,8 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include '../src/views/templates/header.php';
-?>
+include '../src/views/templates/header.php';?>
+
+<link rel="stylesheet" href="/assets/css/style.css">
 
 <main class="container auth-page">
     <div class="auth-form">
